@@ -12,8 +12,8 @@ async def use(proxies):
 async def find(proxies, loop):
     broker = Broker(queue=proxies,
                     timeout=5,
-                    attempts_conn=2,
-                    max_concurrent_conn=400,
+                    max_tries=2,
+                    max_conn=400,
                     judges=['https://httpheader.net/', 'http://httpheader.net/'],
                     verify_ssl=False,
                     loop=loop)
