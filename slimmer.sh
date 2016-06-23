@@ -9,4 +9,6 @@ docker build -t ubuprxctr .
 	--include-path /bin/tail \
 	--include-path /bin/sleep \
 	--include-path /bin/cp \
+	--mount ./test:/test \
+	--entrypoint /test/libinclude.sh \
 	ubuprxctr
