@@ -1,1 +1,1 @@
-scripts/runppx.sh
+runppx.sh

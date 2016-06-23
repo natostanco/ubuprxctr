@@ -9,6 +9,5 @@ docker build -t ubuprxctr .
         --http-probe \
         --include-path /entry \
         --mount ${DIR}/test:/test \
-        --entrypoint sh \
-        --cmd "/test/libinclude.sh" \
+        --entrypoint /test/libinclude.sh \
         ubuprxctr
