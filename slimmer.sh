@@ -1,14 +1,16 @@
 #!/bin/sh
 
+DIR=`dirname "$(readlink -f "$0")"`
+
 docker build -t ubuprxctr . 
 
 ./docker-slim build \
-	--continue-after 30 \
-	--http-probe \
-	--include-path /entry \
-	--include-path /bin/tail \
-	--include-path /bin/sleep \
-	--include-path /bin/cp \
-	--mount ./test:/test \
-	--entrypoint /test/libinclude.sh \
-	ubuprxctr
+        --continue-after 30 \
+        --http-probe \
+        --include-path /entry \
+        --include-path /bin/tail \
+        --include-path /bin/sleep \
+        --include-path /bin/cp \
+        --mount ${DIR}/test:/test \
+        --entrypoint /test/libinclude.sh \
+        ubuprxctr
