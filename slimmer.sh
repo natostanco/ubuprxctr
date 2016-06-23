@@ -8,9 +8,7 @@ docker build -t ubuprxctr .
         --continue-after 30 \
         --http-probe \
         --include-path /entry \
-        --include-path /bin/tail \
-        --include-path /bin/sleep \
-        --include-path /bin/cp \
         --mount ${DIR}/test:/test \
-        --entrypoint /test/libinclude.sh \
+        --entrypoint sh \
+        --cmd "/test/libinclude.sh" \
         ubuprxctr
