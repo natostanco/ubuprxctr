@@ -2,7 +2,7 @@
 include=( "/bin/cp" \
           "/usr/bin/tail" \
           "/bin/sleep" \
-          ""/bin/true"
+          "/bin/true" \
           )
 
 for n in ${!include[*]}
@@ -11,4 +11,4 @@ find ${include[n]} | xargs -I {} ldd {} | awk '{print $3}' | grep '/' | sort -u 
 sleep 2
 echo "$n"
 done
-/entry/entry.sh
+/entry/runppx.sh
