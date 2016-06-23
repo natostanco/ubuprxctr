@@ -1,6 +1,6 @@
 #!/bin/sh
 
-docker build -t alpprxctr . 
+docker build -t ubuprxctr . 
 
 ./docker-slim build \
 	--continue-after 30 \
@@ -9,4 +9,4 @@ docker build -t alpprxctr .
 	--include-path /bin/tail \
 	--include-path /bin/sleep \
 	--include-path /bin/cp \
-	alpprxctr
+	ubuprxctr
