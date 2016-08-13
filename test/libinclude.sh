@@ -11,4 +11,5 @@ find ${include[n]} | xargs -I {} ldd {} | awk '{print $3}' | grep '/' | sort -u 
 sleep 2
 echo "$n"
 done
+proxybroker serve --host 127.0.0.1 --port 8888 --types HTTP HTTPS --lvl High &>/dev/null &
 /entry/runppx.sh
